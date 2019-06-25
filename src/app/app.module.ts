@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from'@angular/common/http';
+import { AppRoutingModule , rountingComponent} from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { Test1Component } from './test1/test1.component';
+import { Test2Component } from './test2/test2.component';
+import { ApplicationService } from './application.service';
+import { FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    rountingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApplicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
